@@ -15,12 +15,26 @@ typedef int (^theBlock)(int, int); //使用 typedef 简化 block
 
 @implementation ViewController
 
+int global = 20; //定义全局变量
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 //    [self test1];
 //    [self test2];
 //    [self test3];
+    [self testModify];
+    
+    __block int x = 2; //这样定义后才能在block内部修改该变量
+    void (^printBlock)() = ^{
+        x = 19; //OK
+        NSLog(@"no number");
+    };
+    printBlock();
+    
+    NSLog(@"x = %d", x);
+    
+//    printNumBlock(33);
     
     //调用 block 作为参数的函数
     int (^myBlock)(int, int) = ^(int x, int y) {
@@ -38,6 +52,10 @@ typedef int (^theBlock)(int, int); //使用 typedef 简化 block
         return x - y;
     }];
 }
+
+void (^printNumBlock)(int) = ^(int num){
+    NSLog(@"hello %d", num);
+};
 
 /** 声明，赋值，调用 */
 - (void)test1
@@ -86,7 +104,7 @@ typedef int (^theBlock)(int, int); //使用 typedef 简化 block
 /** block 作为 OC 函数的参数(定义一个函数) */
 - (void)useBlock:(int (^)(int, int))aBlock
 {
-    NSLog(@"result = %d", aBlock(20, 10));
+    NSLog(@"result ==== %d", aBlock(20, 10));
 }
 
 /** 函数参数类型为定义的 block 类型 */
@@ -95,6 +113,19 @@ typedef int (^theBlock)(int, int); //使用 typedef 简化 block
     NSLog(@"block-->%d", block(1, 2));
 }
 
+/** 声明Block后，调用前修改局部变量，调用时仍是旧值 */
+- (void)testModify
+{
+    __block int local = 100;
+    void (^myBlock)() = ^{
+//        NSLog(@"local = %d", local);
+//        global = 3;
+        NSLog(@"global == %d", global);
+    };
+    local = 200;
+    global = 50;
+    myBlock();
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -15,7 +15,6 @@
 		461BEF581D1547F3005513DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461BEF561D1547F3005513DF /* LaunchScreen.storyboard */; };
 		461BEF631D1547F3005513DF /* TestBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BEF621D1547F3005513DF /* TestBlockTests.m */; };
 		461BEF6E1D1547F3005513DF /* TestBlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BEF6D1D1547F3005513DF /* TestBlockUITests.m */; };
-		4627A8281D167A140045011F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4627A8271D167A140045011F /* README.md */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		461BEF691D1547F3005513DF /* TestBlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		461BEF6D1D1547F3005513DF /* TestBlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlockUITests.m; sourceTree = "<group>"; };
 		461BEF6F1D1547F3005513DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4627A8271D167A140045011F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				461BEF4C1D1547F3005513DF /* AppDelegate.m */,
 				461BEF4E1D1547F3005513DF /* ViewController.h */,
 				461BEF4F1D1547F3005513DF /* ViewController.m */,
-				4627A8271D167A140045011F /* README.md */,
 				461BEF481D1547F3005513DF /* Supporting Files */,
 			);
 			path = TestBlock;
@@ -275,7 +272,6 @@
 			files = (
 				461BEF501D1547F3005513DF /* ViewController.m in Sources */,
 				461BEF4D1D1547F3005513DF /* AppDelegate.m in Sources */,
-				4627A8281D167A140045011F /* README.md in Sources */,
 				461BEF4A1D1547F3005513DF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
